@@ -5,8 +5,8 @@ import { defineConfig } from 'astro/config';
 //    SITE = 'https://zapasek1.github.io'   BASE = '/kajastronka'
 // B) Custom domain (add public/CNAME with the domain):
 //    SITE = 'https://yourdomain.com'       BASE = '/'
-const SITE = 'https://zapasek1.github.io';
-const BASE = '/kajastronka';
+const SITE = 'https://kajamann.com';
+const BASE = '/';
 
 export default defineConfig({
   site: SITE,
