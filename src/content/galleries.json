@@ -1,0 +1,151 @@
+{
+  "sections": [
+    {
+      "id": "fashion",
+      "label": "fashion",
+      "intro": "Collections, one-off pieces and custom tailoring.",
+      "offer": "Custom pieces and alterations on request.",
+      "items": [
+        {
+          "image": "/uploads/fashion-1.webp",
+          "title": "Autumn capsule",
+          "description": "Wool coat and wide trousers, hand-finished seams."
+        },
+        {
+          "image": "",
+          "title": "Slow, hand-finished clothing",
+          "description": "Every piece starts as a sketch on paper and is cut, sewn and fitted by hand. Natural fabrics, honest construction, made to last."
+        },
+        {
+          "image": "/uploads/fashion-2.webp",
+          "title": "Linen set",
+          "description": "Relaxed summer two-piece in natural linen."
+        },
+        {
+          "image": "/uploads/fashion-3.webp",
+          "title": "Evening dress",
+          "description": "Bias-cut silk, made to measure."
+        },
+        {
+          "image": "/uploads/fashion-4.webp",
+          "title": "Upcycled denim",
+          "description": "Jacket rebuilt from three pairs of old jeans."
+        },
+        {
+          "image": "/uploads/fashion-5.webp",
+          "title": "Knit study",
+          "description": "Chunky knit experiments in undyed wool."
+        },
+        {
+          "image": "/uploads/fashion-6.webp",
+          "title": "Lookbook",
+          "description": "Selected looks from the latest collection."
+        }
+      ]
+    },
+    {
+      "id": "graphics",
+      "label": "graphics",
+      "intro": "Branding, prints, posters and illustration.",
+      "offer": "Logos, posters, textile prints and social media graphics.",
+      "items": [
+        {
+          "image": "/uploads/graphics-1.webp",
+          "title": "Brand identity",
+          "description": "Logo and colour system for a small café."
+        },
+        {
+          "image": "",
+          "title": "Graphics with a point of view",
+          "description": "From a single logo to a full visual identity: clear ideas, bold colour and type that feels like you."
+        },
+        {
+          "image": "/uploads/graphics-2.webp",
+          "title": "Poster series",
+          "description": "Screen-printed posters for a local festival."
+        },
+        {
+          "image": "/uploads/graphics-3.webp",
+          "title": "Textile print",
+          "description": "Repeat pattern designed for a scarf collection."
+        },
+        {
+          "image": "/uploads/graphics-4.webp",
+          "title": "Packaging",
+          "description": "Labels for a handmade cosmetics line."
+        },
+        {
+          "image": "/uploads/graphics-5.webp",
+          "title": "Illustration",
+          "description": "Editorial illustration for a magazine piece."
+        },
+        {
+          "image": "/uploads/graphics-6.webp",
+          "title": "Social kit",
+          "description": "Templates for a consistent Instagram feed."
+        }
+      ]
+    },
+    {
+      "id": "photography",
+      "label": "photography",
+      "intro": "Portraits, product and fashion photography.",
+      "offer": "Portrait sessions, product shoots and lookbooks.",
+      "items": [
+        {
+          "image": "/uploads/photography-1.webp",
+          "title": "Portrait",
+          "description": "Natural light portrait session."
+        },
+        {
+          "image": "",
+          "title": "Light, texture, people",
+          "description": "Calm, natural photographs for portraits, products and collections. Shot on location or in a small studio."
+        },
+        {
+          "image": "/uploads/photography-2.webp",
+          "title": "Product",
+          "description": "Studio shots for an online shop."
+        },
+        {
+          "image": "/uploads/photography-3.webp",
+          "title": "Street",
+          "description": "Moments from city walks."
+        },
+        {
+          "image": "/uploads/photography-4.webp",
+          "title": "Lookbook shoot",
+          "description": "Outdoor fashion shoot for a new collection."
+        },
+        {
+          "image": "/uploads/photography-5.webp",
+          "title": "Still life",
+          "description": "Textures and objects in soft light."
+        },
+        {
+          "image": "/uploads/photography-6.webp",
+          "title": "Behind the scenes",
+          "description": "From the studio during a busy week."
+        }
+      ]
+    }
+  ],
+  "home": [
+    {
+      "image": "/uploads/fashion-3.webp",
+      "section": "fashion"
+    },
+    {
+      "image": "/uploads/graphics-2.webp",
+      "section": "graphics"
+    },
+    {
+      "image": "/uploads/photography-4.webp",
+      "section": "photography"
+    },
+    {
+      "image": "/uploads/fashion-1.webp",
+      "section": "fashion"
+    }
+  ]
+}

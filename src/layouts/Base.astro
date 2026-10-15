@@ -1,0 +1,37 @@
+---
+import '@fontsource/bodoni-moda/400.css';
+import '@fontsource/bodoni-moda/400-italic.css';
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import settings from '../content/settings.json';
+
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+const pageTitle = title ?? `${settings.name} | ${settings.tagline}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={settings.seo_description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={settings.seo_description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#efe6ee" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true">
+      <span class="aurora__blob aurora__blob--1"></span>
+      <span class="aurora__blob aurora__blob--2"></span>
+      <span class="aurora__blob aurora__blob--3"></span>
+      <span class="aurora__blob aurora__blob--4"></span>
+    </div>
+    <slot />
+  </body>
+</html>

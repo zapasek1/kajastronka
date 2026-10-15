@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Content editor: <site address>/admin/  (Sign In with Token + GitHub token, see README)
+
+backend:
+  name: github
+  repo: zapasek1/kajastronka
+  branch: main
+  commit_messages:
+    update: 'Content: update {{slug}}'
+    uploadMedia: 'Media: add {{path}}'
+    deleteMedia: 'Media: remove {{path}}'
+
+publish_mode: simple
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: site
+    label: Site
+    description: Changes appear on the site about 1-2 minutes after saving.
+    files:
+      - name: settings
+        label: Basics
+        file: src/content/settings.json
+        format: json
+        fields:
+          - { name: name, label: Name (top left), widget: string }
+          - { name: tagline, label: Tagline (start page), widget: string }
+          - { name: intro, label: Short intro (start page), widget: text, required: false }
+          - { name: email, label: E-mail, widget: string }
+          - { name: instagram_url, label: Instagram link, widget: string, required: false }
+          - { name: seo_description, label: Description for Google, widget: text, hint: 'Up to about 155 characters.' }
+
+      - name: galleries
+        label: Start page and tabs
+        file: src/content/galleries.json
+        format: json
+        fields:
+          - name: home
+            label: Start page photos
+            label_singular: photo
+            widget: list
+            max: 4
+            hint: 'Exactly 4 looks best. Clicking a photo opens the chosen tab.'
+            summary: '{{fields.section}}'
+            fields:
+              - { name: image, label: Photo, widget: image }
+              - { name: section, label: Opens tab, widget: select, options: [fashion, graphics, photography] }
+          - name: sections
+            label: Tabs
+            label_singular: tab
+            widget: list
+            allow_add: false
+            allow_delete: false
+            summary: '{{fields.label}}'
+            fields:
+              - { name: id, label: ID (do not change), widget: hidden }
+              - { name: label, label: Tab name, widget: string }
+              - { name: intro, label: Line above the grid, widget: string, required: false }
+              - { name: offer, label: Offer badge, widget: string, required: false, hint: 'Short line shown in a glass badge, e.g. what you offer and how to order.' }
+              - name: items
+                label: Tiles
+                label_singular: tile
+                widget: list
+                summary: '{{fields.title}}'
+                hint: 'Order = order on the page. Grid repeats: 2 big squares, 3 squares, 1 wide + 1 square. A tile without a photo becomes a text tile.'
+                fields:
+                  - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false }
+                  - { name: title, label: Title, widget: string, required: false }
+                  - { name: description, label: Description, widget: text, required: false }
+
+      - name: contact
+        label: Contact tab
+        file: src/content/contact.json
+        format: json
+        fields:
+          - { name: heading, label: Heading, widget: string }
+          - { name: text, label: Text, widget: text }
+          - name: services
+            label: What I offer
+            label_singular: item
+            widget: list
+            required: false
+            field: { name: item, label: Item, widget: string }
+          - { name: location, label: Location line, widget: string, required: false }
