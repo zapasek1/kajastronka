@@ -83,3 +83,6 @@ collections:
             required: false
             field: { name: item, label: Item, widget: string }
           - { name: location, label: Location line, widget: string, required: false }
+          - { name: form_intro, label: Line above the form, widget: string, required: false }
+          - { name: consent, label: Consent checkbox text, widget: text }
+          - { name: thanks, label: Message after sending, widget: string }
