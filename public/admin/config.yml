@@ -14,6 +14,17 @@ publish_mode: simple
 media_folder: public/uploads
 public_folder: /uploads
 
+# Photos are resized and compressed in the browser before upload:
+# longest side max 2000 px, WebP, quality 82. Smaller photos are not enlarged.
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 82
+        width: 2000
+        height: 2000
+
 collections:
   - name: site
     label: Site
@@ -67,7 +78,7 @@ collections:
                 summary: '{{fields.title}}'
                 hint: 'Order = order on the page. Photos with the same Project are grouped: clicking a photo shows the whole project. A tile without a photo becomes a text tile (best placed as the project description).'
                 fields:
-                  - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false }
+                  - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false, hint: 'Any size: it is shrunk to max 2000 px automatically. Best in portrait 4:5; the grid crops from the edges.' }
                   - { name: title, label: Title, widget: string, required: false }
                   - { name: description, label: Description, widget: text, required: false }
                   - { name: project, label: Project, widget: string, required: false, hint: 'Exactly the same name on every photo of one project, e.g. Sense Collection.' }
