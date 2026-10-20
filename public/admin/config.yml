@@ -5,6 +5,7 @@ backend:
   name: github
   repo: zapasek1/kajastronka
   branch: main
+  base_url: https://sveltia-cms-auth.zapas950.workers.dev
   commit_messages:
     update: 'Content: update {{slug}}'
     uploadMedia: 'Media: add {{path}}'
