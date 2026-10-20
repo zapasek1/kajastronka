@@ -6,170 +6,207 @@ import contact from '../content/contact.json';
 import { asset } from '../lib/util';
 import { techConfig } from '../site.config';
 
-type Item = { image?: string; title?: string; description?: string };
+type Item = { image?: string; title?: string; description?: string; project?: string };
 type Section = { id: string; label: string; intro?: string; offer?: string; items?: Item[] };
-type Feature = { image: string; section: string };
+type Feature = { image: string; section: string; caption?: string };
 
 const sections = (galleries.sections as Section[]).filter((s) => s.id && s.label);
 const tabs = [...sections.map((s) => ({ id: s.id, label: s.label })), { id: 'contact', label: 'contact' }];
 const labelOf = (id: string) => tabs.find((t) => t.id === id)?.label ?? id;
 const home = ((galleries.home ?? []) as Feature[]).filter((f) => f.image).slice(0, 4);
+const projectsOf = (s: Section) => [...new Set((s.items ?? []).map((i) => i.project).filter(Boolean))] as string[];
 const year = new Date().getFullYear();
 const mail = `mailto:${settings.email}`;
 const igHandle = settings.instagram_url?.match(/instagram\.com\/([^/?#]+)/)?.[1];
+const tel = settings.phone ? 'tel:' + settings.phone.replace(/[^\d+]/g, '') : '';
 ---
 <Base>
-  <header class="top wrap">
-    <div class="top__bar">
+  <header class="bar">
+    <div class="bar__inner wrap">
       <a class="brand" href="#home" data-tab-link="home">{settings.name}</a>
-      <nav class="social" aria-label="Contact links">
-        {settings.email && (
-          <a class="glass social__btn" href="#contact" data-tab-link="contact" aria-label="Contact">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></svg>
-          </a>
-        )}
+      <nav class="tabs" role="tablist" aria-label="Portfolio sections">
+        <span class="tabs__indicator" aria-hidden="true"></span>
+        {tabs.map((t) => (
+          <a class="tab" role="tab" id={`tab-${t.id}`} href={`#${t.id}`} aria-controls={t.id} aria-selected="false">{t.label}</a>
+        ))}
+      </nav>
+      <div class="social">
         {settings.instagram_url && (
-          <a class="glass social__btn" href={settings.instagram_url} target="_blank" rel="noopener" aria-label="Instagram">
+          <a href={settings.instagram_url} target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.7" class="fill" /></svg>
           </a>
         )}
-      </nav>
+        <a href="#contact" data-tab-link="contact" aria-label="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" /><path d="m4 7 8 6 8-6" /></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <div class="tabs-wrap wrap">
-    <div class="tabs glass" role="tablist" aria-label="Portfolio sections">
-      <span class="tabs__indicator" aria-hidden="true"></span>
-      {tabs.map((t) => (
-        <a class="tab" role="tab" id={`tab-${t.id}`} href={`#${t.id}`} aria-controls={t.id} aria-selected="false">{t.label}</a>
-      ))}
-    </div>
-  </div>
-
   <main id="content" class="wrap">
-    <section id="home" class="panel panel--home" data-panel>
+    <!-- Start page -->
+    <section id="home" class="panel" data-panel>
       <div class="hero">
-        <p class="hero__tagline">{settings.tagline}</p>
+        <h1 class="hero__name">{settings.name}</h1>
+        <p class="hero__tag">{settings.tagline}</p>
         {settings.intro && <p class="hero__intro">{settings.intro}</p>}
       </div>
-      <ul class="home-grid">
+      <ul class="cards cards--home">
         {home.map((f, i) => (
-          <li class="tile glass" style={`--i:${i}`}>
-            <a class="tile__link" href={`#${f.section}`} data-tab-link={f.section}>
-              <img src={asset(f.image)} alt="" width="1000" height="1000" loading="eager" decoding="async" />
-              <span class="tile__label">{labelOf(f.section)} <span aria-hidden="true">→</span></span>
+          <li class="card" style={`--i:${i}`}>
+            <a class="card__link" href={`#${f.section}`} data-tab-link={f.section}>
+              <span class="card__media"><img src={asset(f.image)} alt="" width="1000" height="1250" decoding="async" /></span>
+              <span class="card__cap">
+                <span class="card__title">{f.caption || labelOf(f.section)}</span>
+                <span class="card__desc">{labelOf(f.section)} →</span>
+              </span>
             </a>
           </li>
         ))}
       </ul>
     </section>
 
-    {sections.map((s) => (
-      <section id={s.id} class="panel" role="tabpanel" aria-labelledby={`tab-${s.id}`} data-panel>
-        {(s.intro || s.offer) && (
-          <div class="panel__head">
-            {s.intro && <p class="panel__intro">{s.intro}</p>}
-            {s.offer && <p class="panel__offer glass">{s.offer}</p>}
-          </div>
-        )}
-        <ul class="grid">
-          {(s.items ?? []).filter((it) => it.image || it.title || it.description).map((it, i) => (
-            it.image ? (
-              <li class="tile glass" style={`--i:${i}`}>
-                <button type="button" class="tile__btn" data-full={asset(it.image)} data-title={it.title ?? ''} data-desc={it.description ?? ''} aria-label={`Open ${it.title || 'image'}`}>
-                  <img src={asset(it.image)} alt={it.title ?? ''} width="1000" height="1000" loading="lazy" decoding="async" />
-                  {(it.title || it.description) && (
-                    <span class="tile__caption">
-                      {it.title && <span class="tile__title">{it.title}</span>}
-                      {it.description && <span class="tile__desc">{it.description}</span>}
-                    </span>
-                  )}
-                </button>
-              </li>
-            ) : (
-              <li class="tile tile--text glass" style={`--i:${i}`}>
-                <div class="tile__text">
-                  {it.title && <h2>{it.title}</h2>}
-                  {it.description && <p>{it.description}</p>}
-                </div>
-              </li>
-            )
-          ))}
-        </ul>
-      </section>
-    ))}
+    <!-- Portfolio tabs -->
+    {sections.map((s) => {
+      const projects = projectsOf(s);
+      return (
+        <section id={s.id} class="panel shop" role="tabpanel" aria-labelledby={`tab-${s.id}`} data-panel>
+          <aside class="side">
+            <p class="side__title">{s.label}</p>
+            {projects.length > 1 && (
+              <ul class="side__list" data-filter>
+                <li><button type="button" class="side__item" aria-pressed="true" data-project="">All</button></li>
+                {projects.map((p) => (
+                  <li><button type="button" class="side__item" aria-pressed="false" data-project={p}>{p}</button></li>
+                ))}
+              </ul>
+            )}
+            {s.offer && <p class="side__offer">{s.offer}</p>}
+          </aside>
 
-    <section id="contact" class="panel" role="tabpanel" aria-labelledby="tab-contact" data-panel>
-      <div class="contact glass">
-        <div class="contact__text">
-          <h2 class="contact__heading">{contact.heading}</h2>
-          <p>{contact.text}</p>
-          {contact.services?.length > 0 && (
-            <ul class="contact__services">
-              {contact.services.map((x: string) => <li>{x}</li>)}
+          <div class="shop__main">
+            <div class="shop__head">
+              <h2 class="shop__heading">
+                <button type="button" class="back" data-back hidden>← Back</button>
+                <span data-heading>{s.intro || s.label}</span>
+              </h2>
+              <div class="view" role="group" aria-label="Image size">
+                <span>View</span>
+                {['S', 'M', 'L'].map((v) => (
+                  <button type="button" class="view__btn" data-view={v} aria-pressed={v === 'M' ? 'true' : 'false'}>{v}</button>
+                ))}
+              </div>
+            </div>
+
+            <ul class="cards" data-grid data-view="M">
+              {(s.items ?? []).filter((it) => it.image || it.title || it.description).map((it, i) => (
+                it.image ? (
+                  <li class="card" style={`--i:${i}`} data-project={it.project ?? ''}>
+                    <button type="button" class="card__link card__btn" data-full={asset(it.image)} data-title={it.title ?? ''} data-desc={it.description ?? ''} aria-label={`${it.project || it.title || 'Image'}: open`}>
+                      <span class="card__media">
+                        <img src={asset(it.image)} alt={it.title ?? ''} width="1000" height="1250" loading="lazy" decoding="async" />
+                        <span class="card__over" aria-hidden="true">
+                          {it.project && <span class="card__over-project">{it.project}</span>}
+                          {it.description && <span class="card__over-desc">{it.description}</span>}
+                          <span class="card__over-hint card__over-hint--project">View project →</span>
+                          <span class="card__over-hint card__over-hint--zoom">Enlarge +</span>
+                        </span>
+                      </span>
+                      {(it.title || it.description) && (
+                        <span class="card__cap">
+                          {it.title && <span class="card__title">{it.title}</span>}
+                          {it.description && <span class="card__desc">{it.description}</span>}
+                        </span>
+                      )}
+                    </button>
+                  </li>
+                ) : (
+                  <li class="card card--text" style={`--i:${i}`} data-project={it.project ?? ''}>
+                    {it.title && <h3>{it.title}</h3>}
+                    {it.description && <p>{it.description}</p>}
+                  </li>
+                )
+              ))}
             </ul>
-          )}
-            {contact.location && <p class="contact__loc">{contact.location}</p>}
-          <div class="contact__links">
-            {settings.email && (
-              <a class="glass contact__link" href={mail}>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></svg>
-                <span>{settings.email}</span>
-              </a>
-            )}
-            {settings.instagram_url && (
-              <a class="glass contact__link" href={settings.instagram_url} target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.7" class="fill" /></svg>
-                <span>{igHandle ? `@${igHandle}` : 'Instagram'}</span>
-              </a>
-            )}
           </div>
-        </div>
+        </section>
+      );
+    })}
 
-        <form class="form glass" id="form" novalidate data-key={techConfig.web3formsKey} data-email={settings.email} data-thanks={contact.thanks}>
-          {contact.form_intro && <p class="form__intro">{contact.form_intro}</p>}
-          <div class="form__pair">
-            <label class="form__row"><span>Name</span><input name="name" type="text" autocomplete="name" required /></label>
-            <label class="form__row"><span>Email</span><input name="email" type="email" autocomplete="email" required /></label>
-          </div>
-          <fieldset class="form__topics">
-            <legend>What is it about?</legend>
-            {[...sections.map((x) => x.label), 'other'].map((t, i) => (
-              <label class="chip"><input type="radio" name="topic" value={t} checked={i === 0} /><span>{t}</span></label>
-            ))}
-          </fieldset>
-          <label class="form__row"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
-          <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <label class="form__consent"><input type="checkbox" name="consent" required /><span>{contact.consent}</span></label>
-          <button class="form__submit" type="submit">Send message</button>
-          <p class="form__status" role="status" aria-live="polite"></p>
-        </form>
+    <!-- Contact -->
+    <section id="contact" class="panel contact" role="tabpanel" aria-labelledby="tab-contact" data-panel>
+      <div class="contact__info">
+        <h2 class="contact__heading">{contact.heading}</h2>
+        <p class="contact__text">{contact.text}</p>
+        <dl class="contact__details">
+          {settings.email && (<><dt>Email</dt><dd><a href={mail}>{settings.email}</a></dd></>)}
+          {settings.instagram_url && (<><dt>Instagram</dt><dd><a href={settings.instagram_url} target="_blank" rel="noopener">@{igHandle ?? 'instagram'}</a></dd></>)}
+          {settings.phone && (<><dt>Phone</dt><dd><a href={tel}>{settings.phone}</a></dd></>)}
+          {contact.location && (<><dt>Based in</dt><dd>{contact.location}</dd></>)}
+        </dl>
+        {contact.services?.length > 0 && (
+          <>
+            <p class="label">Services</p>
+            <ul class="contact__list">{contact.services.map((x: string) => <li>{x}</li>)}</ul>
+          </>
+        )}
+        {contact.experience?.length > 0 && (
+          <>
+            <p class="label">Experience</p>
+            <ul class="contact__list">{contact.experience.map((x: string) => <li>{x}</li>)}</ul>
+          </>
+        )}
       </div>
+
+      <form class="form" id="form" novalidate data-key={techConfig.web3formsKey} data-email={settings.email} data-thanks={contact.thanks}>
+        {contact.form_intro && <p class="form__intro">{contact.form_intro}</p>}
+        <div class="form__pair">
+          <label class="form__row"><span class="label">Name</span><input name="name" type="text" autocomplete="name" required /></label>
+          <label class="form__row"><span class="label">Email</span><input name="email" type="email" autocomplete="email" required /></label>
+        </div>
+        <fieldset class="form__topics">
+          <legend class="label">Subject</legend>
+          {[...sections.map((x) => x.label), 'other'].map((t, i) => (
+            <label class="chip"><input type="radio" name="topic" value={t} checked={i === 0} /><span>{t}</span></label>
+          ))}
+        </fieldset>
+        <label class="form__row"><span class="label">Message</span><textarea name="message" rows="6" required></textarea></label>
+        <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="form__consent"><input type="checkbox" name="consent" required /><span>{contact.consent}</span></label>
+        <button class="form__submit" type="submit">Send message</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
-  <footer class="foot wrap">© {year} {settings.name}</footer>
+  <footer class="foot wrap">
+    <span>© {year} {settings.name}</span>
+    <span>{settings.tagline}</span>
+  </footer>
 
   <dialog class="lightbox" aria-label="Image preview">
-    <div class="lightbox__inner glass">
-      <button type="button" class="lightbox__close" aria-label="Close">×</button>
-      <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous">‹</button>
+    <div class="lightbox__inner">
+      <button type="button" class="lightbox__close" aria-label="Close">Close</button>
       <figure>
         <img alt="" />
-        <figcaption><strong></strong><span></span></figcaption>
+        <figcaption><span class="lightbox__title"></span><span class="lightbox__desc"></span></figcaption>
       </figure>
-      <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next">›</button>
+      <div class="lightbox__nav">
+        <button type="button" class="lightbox__prev" aria-label="Previous">← Prev</button>
+        <span class="lightbox__count"></span>
+        <button type="button" class="lightbox__next" aria-label="Next">Next →</button>
+      </div>
     </div>
   </dialog>
 
   <script>
     import { initTabs } from '../scripts/tabs';
     import { initLightbox } from '../scripts/lightbox';
-    import { initSheen } from '../scripts/sheen';
+    import { initShop } from '../scripts/shop';
     import { initForm } from '../scripts/form';
     initTabs();
+    initShop();
     initLightbox();
-    initSheen();
     initForm();
   </script>
 </Base>

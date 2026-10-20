@@ -1,151 +1,176 @@
 {
+  "home": [
+    {
+      "image": "/uploads/ph-01.webp",
+      "section": "fashion",
+      "caption": "Cirra Studio"
+    },
+    {
+      "image": "/uploads/ph-05.webp",
+      "section": "fashion",
+      "caption": "Sense Collection"
+    },
+    {
+      "image": "/uploads/ph-15.webp",
+      "section": "photography",
+      "caption": "Remains"
+    },
+    {
+      "image": "/uploads/ph-11.webp",
+      "section": "graphics",
+      "caption": "Graphics"
+    }
+  ],
   "sections": [
     {
       "id": "fashion",
       "label": "fashion",
-      "intro": "Collections, one-off pieces and custom tailoring.",
-      "offer": "Custom pieces and alterations on request.",
+      "intro": "Collections and brand concepts",
+      "offer": "Custom pieces on request",
       "items": [
         {
-          "image": "/uploads/fashion-1.webp",
-          "title": "Autumn capsule",
-          "description": "Wool coat and wide trousers, hand-finished seams."
+          "image": "/uploads/ph-01.webp",
+          "title": "Cirra Studio",
+          "description": "100% silk satin, 100% silk chiffon. Sourced locally, made in Italy.",
+          "project": "Cirra Studio Brand Concept"
+        },
+        {
+          "image": "/uploads/ph-02.webp",
+          "title": "Cirra Studio",
+          "description": "Sheer chiffon layers over satin.",
+          "project": "Cirra Studio Brand Concept"
+        },
+        {
+          "image": "/uploads/ph-03.webp",
+          "title": "Cirra Studio",
+          "description": "Bell sleeve dress in silk.",
+          "project": "Cirra Studio Brand Concept"
         },
         {
           "image": "",
-          "title": "Slow, hand-finished clothing",
-          "description": "Every piece starts as a sketch on paper and is cut, sewn and fitted by hand. Natural fabrics, honest construction, made to last."
+          "title": "Cirra Studio Brand Concept",
+          "description": "A brand concept built around light, transparent fabrics and a calm, muted palette.",
+          "project": "Cirra Studio Brand Concept"
         },
         {
-          "image": "/uploads/fashion-2.webp",
-          "title": "Linen set",
-          "description": "Relaxed summer two-piece in natural linen."
+          "image": "/uploads/ph-04.webp",
+          "title": "Sense Collection",
+          "description": "Linen set in natural tones.",
+          "project": "Sense Collection"
         },
         {
-          "image": "/uploads/fashion-3.webp",
-          "title": "Evening dress",
-          "description": "Bias-cut silk, made to measure."
+          "image": "/uploads/ph-05.webp",
+          "title": "Sense Collection",
+          "description": "Relaxed shirt and wide trousers.",
+          "project": "Sense Collection"
         },
         {
-          "image": "/uploads/fashion-4.webp",
-          "title": "Upcycled denim",
-          "description": "Jacket rebuilt from three pairs of old jeans."
+          "image": "/uploads/ph-06.webp",
+          "title": "Resort '25",
+          "description": "Summer pieces for warm days.",
+          "project": "Resort '25 Collection"
         },
         {
-          "image": "/uploads/fashion-5.webp",
-          "title": "Knit study",
-          "description": "Chunky knit experiments in undyed wool."
+          "image": "/uploads/ph-07.webp",
+          "title": "Resort '25",
+          "description": "Light layers and soft shapes.",
+          "project": "Resort '25 Collection"
         },
         {
-          "image": "/uploads/fashion-6.webp",
-          "title": "Lookbook",
-          "description": "Selected looks from the latest collection."
+          "image": "/uploads/ph-08.webp",
+          "title": "Circular Denim Workwear",
+          "description": "Workwear rebuilt from reclaimed denim.",
+          "project": "Circular Denim Workwear"
+        },
+        {
+          "image": "/uploads/ph-09.webp",
+          "title": "Circular Denim Workwear",
+          "description": "Patchwork jacket, reinforced seams.",
+          "project": "Circular Denim Workwear"
         }
       ]
     },
     {
       "id": "graphics",
       "label": "graphics",
-      "intro": "Branding, prints, posters and illustration.",
-      "offer": "Logos, posters, textile prints and social media graphics.",
+      "intro": "Identity, print and editorial",
+      "offer": "",
       "items": [
         {
-          "image": "/uploads/graphics-1.webp",
-          "title": "Brand identity",
-          "description": "Logo and colour system for a small café."
+          "image": "/uploads/ph-10.webp",
+          "title": "Cirra Studio identity",
+          "description": "Logo, type and colour for the brand concept.",
+          "project": "Brand identity"
+        },
+        {
+          "image": "/uploads/ph-11.webp",
+          "title": "Lookbook layout",
+          "description": "Editorial layout for a collection lookbook.",
+          "project": "Editorial"
         },
         {
           "image": "",
-          "title": "Graphics with a point of view",
-          "description": "From a single logo to a full visual identity: clear ideas, bold colour and type that feels like you."
+          "title": "Graphics",
+          "description": "Branding, lookbooks, posters and social media visuals, designed to sit quietly next to the product.",
+          "project": "Brand identity"
         },
         {
-          "image": "/uploads/graphics-2.webp",
-          "title": "Poster series",
-          "description": "Screen-printed posters for a local festival."
+          "image": "/uploads/ph-12.webp",
+          "title": "Poster",
+          "description": "Print design for an event.",
+          "project": "Print"
         },
         {
-          "image": "/uploads/graphics-3.webp",
-          "title": "Textile print",
-          "description": "Repeat pattern designed for a scarf collection."
-        },
-        {
-          "image": "/uploads/graphics-4.webp",
-          "title": "Packaging",
-          "description": "Labels for a handmade cosmetics line."
-        },
-        {
-          "image": "/uploads/graphics-5.webp",
-          "title": "Illustration",
-          "description": "Editorial illustration for a magazine piece."
-        },
-        {
-          "image": "/uploads/graphics-6.webp",
-          "title": "Social kit",
-          "description": "Templates for a consistent Instagram feed."
+          "image": "/uploads/ph-13.webp",
+          "title": "Labels",
+          "description": "Care labels and hang tags.",
+          "project": "Print"
         }
       ]
     },
     {
       "id": "photography",
       "label": "photography",
-      "intro": "Portraits, product and fashion photography.",
-      "offer": "Portrait sessions, product shoots and lookbooks.",
+      "intro": "Fashion and portrait photography",
+      "offer": "Sessions on request",
       "items": [
         {
-          "image": "/uploads/photography-1.webp",
-          "title": "Portrait",
-          "description": "Natural light portrait session."
+          "image": "/uploads/ph-14.webp",
+          "title": "Remains",
+          "description": "Fashion photography for Remains.",
+          "project": "Fashion Photography for Remains"
+        },
+        {
+          "image": "/uploads/ph-15.webp",
+          "title": "Remains",
+          "description": "Studio shoot, natural light.",
+          "project": "Fashion Photography for Remains"
+        },
+        {
+          "image": "/uploads/ph-16.webp",
+          "title": "YLSC",
+          "description": "Fashion photography for YLSC.",
+          "project": "Fashion Photography for YLSC"
+        },
+        {
+          "image": "/uploads/ph-17.webp",
+          "title": "YLSC",
+          "description": "Campaign images.",
+          "project": "Fashion Photography for YLSC"
         },
         {
           "image": "",
-          "title": "Light, texture, people",
-          "description": "Calm, natural photographs for portraits, products and collections. Shot on location or in a small studio."
+          "title": "Photography",
+          "description": "Portraits, products and collections, shot in calm, natural light.",
+          "project": "Portraits"
         },
         {
-          "image": "/uploads/photography-2.webp",
-          "title": "Product",
-          "description": "Studio shots for an online shop."
-        },
-        {
-          "image": "/uploads/photography-3.webp",
-          "title": "Street",
-          "description": "Moments from city walks."
-        },
-        {
-          "image": "/uploads/photography-4.webp",
-          "title": "Lookbook shoot",
-          "description": "Outdoor fashion shoot for a new collection."
-        },
-        {
-          "image": "/uploads/photography-5.webp",
-          "title": "Still life",
-          "description": "Textures and objects in soft light."
-        },
-        {
-          "image": "/uploads/photography-6.webp",
-          "title": "Behind the scenes",
-          "description": "From the studio during a busy week."
+          "image": "/uploads/ph-18.webp",
+          "title": "Portrait",
+          "description": "Portrait session.",
+          "project": "Portraits"
         }
       ]
-    }
-  ],
-  "home": [
-    {
-      "image": "/uploads/fashion-3.webp",
-      "section": "fashion"
-    },
-    {
-      "image": "/uploads/graphics-2.webp",
-      "section": "graphics"
-    },
-    {
-      "image": "/uploads/photography-4.webp",
-      "section": "photography"
-    },
-    {
-      "image": "/uploads/fashion-1.webp",
-      "section": "fashion"
     }
   ]
 }

@@ -54,7 +54,11 @@ export function initTabs() {
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', (e) => {
       e.preventDefault();
-      show(tab.getAttribute('aria-controls')!, { push: true });
+      const id = tab.getAttribute('aria-controls')!;
+      // Clicking the open tab again leaves a project view and returns to the overview.
+      if (id === current) document.getElementById(id)?.dispatchEvent(new Event('tab-reset'));
+      show(id, { push: true });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     tab.addEventListener('keydown', (e) => {
       let next = -1;
@@ -81,4 +85,10 @@ export function initTabs() {
   window.addEventListener('resize', moveIndicator);
   document.fonts?.ready.then(moveIndicator);
   show(location.hash.slice(1) || 'home');
+  // Panels are swapped in place, so the browser's own jump to #id would only hide the top under the header.
+  if (location.hash) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+  }
 }

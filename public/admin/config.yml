@@ -28,6 +28,7 @@ collections:
           - { name: tagline, label: Tagline (start page), widget: string }
           - { name: intro, label: Short intro (start page), widget: text, required: false }
           - { name: email, label: E-mail, widget: string }
+          - { name: phone, label: Phone (optional), widget: string, required: false, hint: 'Empty = not shown on the site.' }
           - { name: instagram_url, label: Instagram link, widget: string, required: false }
           - { name: seo_description, label: Description for Google, widget: text, hint: 'Up to about 155 characters.' }
 
@@ -45,6 +46,7 @@ collections:
             summary: '{{fields.section}}'
             fields:
               - { name: image, label: Photo, widget: image }
+              - { name: caption, label: Caption under the photo, widget: string, required: false }
               - { name: section, label: Opens tab, widget: select, options: [fashion, graphics, photography] }
           - name: sections
             label: Tabs
@@ -56,18 +58,19 @@ collections:
             fields:
               - { name: id, label: ID (do not change), widget: hidden }
               - { name: label, label: Tab name, widget: string }
-              - { name: intro, label: Line above the grid, widget: string, required: false }
-              - { name: offer, label: Offer badge, widget: string, required: false, hint: 'Short line shown in a glass badge, e.g. what you offer and how to order.' }
+              - { name: intro, label: Heading above the grid, widget: string, required: false }
+              - { name: offer, label: Offer note (under the project list), widget: string, required: false }
               - name: items
                 label: Tiles
                 label_singular: tile
                 widget: list
                 summary: '{{fields.title}}'
-                hint: 'Order = order on the page. Grid repeats: 2 big squares, 3 squares, 1 wide + 1 square. A tile without a photo becomes a text tile.'
+                hint: 'Order = order on the page. Photos with the same Project are grouped: clicking a photo shows the whole project. A tile without a photo becomes a text tile (best placed as the project description).'
                 fields:
                   - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false }
                   - { name: title, label: Title, widget: string, required: false }
                   - { name: description, label: Description, widget: text, required: false }
+                  - { name: project, label: Project, widget: string, required: false, hint: 'Exactly the same name on every photo of one project, e.g. Sense Collection.' }
 
       - name: contact
         label: Contact tab
@@ -82,7 +85,13 @@ collections:
             widget: list
             required: false
             field: { name: item, label: Item, widget: string }
-          - { name: location, label: Location line, widget: string, required: false }
+          - name: experience
+            label: Experience
+            label_singular: item
+            widget: list
+            required: false
+            field: { name: item, label: Item, widget: string }
+          - { name: location, label: Based in, widget: string, required: false }
           - { name: form_intro, label: Line above the form, widget: string, required: false }
           - { name: consent, label: Consent checkbox text, widget: text }
           - { name: thanks, label: Message after sending, widget: string }

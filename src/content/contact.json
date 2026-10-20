@@ -1,13 +1,16 @@
 {
-  "heading": "Let's work together",
-  "text": "Tell me about your idea: a custom piece, a graphic project or a photo session. I usually reply within two days.",
+  "heading": "Contact",
+  "text": "For collaborations, custom pieces, graphic projects or photo sessions, write to me. I usually reply within two days.",
   "services": [
-    "Fashion design and custom tailoring",
-    "Graphic design and branding",
-    "Portrait, product and fashion photography"
+    "Fashion design and brand concepts",
+    "Graphic design",
+    "Fashion and portrait photography"
   ],
-  "location": "Poland, available for remote projects",
-  "form_intro": "Send a message and I will get back to you.",
+  "location": "",
+  "form_intro": "",
   "consent": "I agree that my name and email are used only to reply to this message.",
-  "thanks": "Thank you, your message has been sent. I will reply soon."
+  "thanks": "Thank you, your message has been sent. I will reply soon.",
+  "experience": [
+    "Fashion Design Assistant at Zekaryas Solomon Ltd."
+  ]
 }
