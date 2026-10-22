@@ -1,24 +1,24 @@
 {
   "home": [
     {
-      "image": "/uploads/ph-01.webp",
-      "section": "fashion",
-      "caption": "Cirra Studio"
+      "image": "/uploads/kajamann_fashion_01_01.webp",
+      "caption": "Cirra Collection",
+      "section": "fashion"
     },
     {
-      "image": "/uploads/ph-05.webp",
-      "section": "fashion",
-      "caption": "Sense Collection"
+      "image": "/uploads/kajamann_fashion_02_02.webp",
+      "caption": "Sense Collection",
+      "section": "fashion"
     },
     {
-      "image": "/uploads/ph-15.webp",
-      "section": "photography",
-      "caption": "Remains"
+      "image": "/uploads/kajamann_photography_01_03.webp",
+      "caption": "YLSC",
+      "section": "photography"
     },
     {
-      "image": "/uploads/ph-11.webp",
-      "section": "graphics",
-      "caption": "Graphics"
+      "image": "/uploads/kajamann_photography_02_02.webp",
+      "caption": "Remains",
+      "section": "photography"
     }
   ],
   "sections": [
