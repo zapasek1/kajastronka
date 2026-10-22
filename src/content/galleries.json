@@ -2,7 +2,7 @@
   "home": [
     {
       "image": "/uploads/kajamann_fashion_01_01.webp",
-      "caption": "Cirra Collection",
+      "caption": "Cirra Studio",
       "section": "fashion"
     },
     {
@@ -25,23 +25,23 @@
     {
       "id": "fashion",
       "label": "fashion",
-      "intro": "Collections and brand concepts",
-      "offer": "Custom pieces on request",
+      "intro": "Collections",
+      "offer": "",
       "items": [
         {
-          "image": "/uploads/ph-01.webp",
+          "image": "/uploads/kajamann_fashion_01_01.webp",
           "title": "Cirra Studio",
-          "description": "100% silk satin, 100% silk chiffon. Sourced locally, made in Italy.",
+          "description": "100% silk satin, 100% silk chiffon.",
           "project": "Cirra Studio Brand Concept"
         },
         {
-          "image": "/uploads/ph-02.webp",
+          "image": "/uploads/kajamann_fashion_01_02.webp",
           "title": "Cirra Studio",
           "description": "Sheer chiffon layers over satin.",
           "project": "Cirra Studio Brand Concept"
         },
         {
-          "image": "/uploads/ph-03.webp",
+          "image": "/uploads/kajamann_fashion_01_03.webp",
           "title": "Cirra Studio",
           "description": "Bell sleeve dress in silk.",
           "project": "Cirra Studio Brand Concept"
