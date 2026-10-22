@@ -53,40 +53,52 @@
           "project": "Cirra Studio"
         },
         {
-          "image": "/uploads/ph-04.webp",
+          "image": "/uploads/kajamann_fashion_02_01.webp",
           "title": "Sense Collection",
-          "description": "Linen set in natural tones.",
+          "description": "The collection reimagines clothing as a multi-sensory experience\nfocusing on three senses: sight, touch and smell. The\ngarments combine hand-dyed textiles from natural plantbased\ndyes, subtle scent sachets activated by movement, and\ntactile elements such as pleats and gatherings.",
           "project": "Sense Collection"
         },
         {
-          "image": "/uploads/ph-05.webp",
+          "image": "/uploads/kajamann_fashion_02_02.webp",
           "title": "Sense Collection",
-          "description": "Relaxed shirt and wide trousers.",
+          "description": "The collection reimagines clothing as a multi-sensory experience\nfocusing on three senses: sight, touch and smell. The\ngarments combine hand-dyed textiles from natural plantbased\ndyes, subtle scent sachets activated by movement, and\ntactile elements such as pleats and gatherings.",
           "project": "Sense Collection"
         },
         {
-          "image": "/uploads/ph-06.webp",
+          "image": "/uploads/kajamann_fashion_02_03.webp",
           "title": "Resort '25",
-          "description": "Summer pieces for warm days.",
+          "description": "The collection reimagines clothing as a multi-sensory experience\nfocusing on three senses: sight, touch and smell. The\ngarments combine hand-dyed textiles from natural plantbased\ndyes, subtle scent sachets activated by movement, and\ntactile elements such as pleats and gatherings.",
           "project": "Resort '25 Collection"
         },
         {
-          "image": "/uploads/ph-07.webp",
+          "image": "/uploads/kajamann_fashion_02_04.webp",
           "title": "Resort '25",
-          "description": "Light layers and soft shapes.",
+          "description": "The collection reimagines clothing as a multi-sensory experience\nfocusing on three senses: sight, touch and smell. The\ngarments combine hand-dyed textiles from natural plantbased\ndyes, subtle scent sachets activated by movement, and\ntactile elements such as pleats and gatherings.",
           "project": "Resort '25 Collection"
         },
         {
-          "image": "/uploads/ph-08.webp",
-          "title": "Circular Denim Workwear",
-          "description": "Workwear rebuilt from reclaimed denim.",
-          "project": "Circular Denim Workwear"
+          "image": "/uploads/kajamann_fashion_04_01.webp",
+          "title": "Resort '25",
+          "description": "The concept stems from personal reflections on childhood:\nwarm summer days spent outdoors, the softness of meadow\nwildflowers, the peach glow of sunsets, and the simple joy of\nfresh fruit at a picnic.",
+          "project": "Resort '25"
         },
         {
-          "image": "/uploads/ph-09.webp",
-          "title": "Circular Denim Workwear",
-          "description": "Patchwork jacket, reinforced seams.",
-          "project": "Circular Denim Workwear"
+          "image": "/uploads/kajamann_fashion_04_02.webp",
+          "title": "Resort '25",
+          "description": "The concept stems from personal reflections on childhood:\nwarm summer days spent outdoors, the softness of meadow\nwildflowers, the peach glow of sunsets, and the simple joy of\nfresh fruit at a picnic.",
+          "project": "Resort '25"
+        },
+        {
+          "image": "/uploads/kajamann_fashion_04_03.webp",
+          "title": "Resort '25",
+          "description": "The concept stems from personal reflections on childhood:\nwarm summer days spent outdoors, the softness of meadow\nwildflowers, the peach glow of sunsets, and the simple joy of\nfresh fruit at a picnic.",
+          "project": "Resort '25"
+        },
+        {
+          "image": "/uploads/kajamann_fashion_04_04.webp",
+          "title": "Resort '25",
+          "description": "The concept stems from personal reflections on childhood:\nwarm summer days spent outdoors, the softness of meadow\nwildflowers, the peach glow of sunsets, and the simple joy of\nfresh fruit at a picnic.",
+          "project": "Resort '25"
         }
       ]
     },
