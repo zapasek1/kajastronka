@@ -5,8 +5,22 @@ import galleries from '../content/galleries.json';
 import contact from '../content/contact.json';
 import { asset } from '../lib/util';
 import { techConfig } from '../site.config';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { imageSize } from 'image-size';
 
-type Item = { image?: string; title?: string; description?: string; project?: string };
+// Landscape photos (wider than tall) take two columns on desktop and the full width on a phone.
+function isWide(src?: string): boolean {
+  if (!src || /^(https?:)?\/\//.test(src)) return false;
+  try {
+    const { width = 0, height = 0 } = imageSize(readFileSync(join(process.cwd(), 'public', src)));
+    return width > height * 1.15;
+  } catch {
+    return false;
+  }
+}
+
+type Item = { image?: string; title?: string; description?: string; project?: string; newRow?: boolean };
 type Section = { id: string; label: string; intro?: string; offer?: string; items?: Item[] };
 type Feature = { image: string; section: string; caption?: string };
 
@@ -90,18 +104,14 @@ const tel = settings.phone ? 'tel:' + settings.phone.replace(/[^\d+]/g, '') : ''
                 <button type="button" class="back" data-back hidden>← Back</button>
                 <span data-heading>{s.intro || s.label}</span>
               </h2>
-              <div class="view" role="group" aria-label="Image size">
-                <span>View</span>
-                {['S', 'M', 'L'].map((v) => (
-                  <button type="button" class="view__btn" data-view={v} aria-pressed={v === 'M' ? 'true' : 'false'}>{v}</button>
-                ))}
-              </div>
             </div>
 
-            <ul class="cards" data-grid data-view="M">
-              {(s.items ?? []).filter((it) => it.image || it.title || it.description).map((it, i) => (
+            <ul class="cards" data-grid>
+              {(s.items ?? []).filter((it) => it.image || it.title || it.description).map((it, i, all) => (
+                // A new project always starts on a new row.
+                (it.newRow = i > 0 && (it.project ?? '') !== (all[i - 1].project ?? '')),
                 it.image ? (
-                  <li class="card" style={`--i:${i}`} data-project={it.project ?? ''}>
+                  <li class={`card${isWide(it.image) ? ' card--wide' : ''}${it.newRow ? ' card--row' : ''}`} style={`--i:${i}`} data-project={it.project ?? ''}>
                     <button type="button" class="card__link card__btn" data-full={asset(it.image)} data-title={it.title ?? ''} data-desc={it.description ?? ''} aria-label={`${it.project || it.title || 'Image'}: open`}>
                       <span class="card__media">
                         <img src={asset(it.image)} alt={it.title ?? ''} width="1000" height="1250" loading="lazy" decoding="async" />
@@ -121,7 +131,7 @@ const tel = settings.phone ? 'tel:' + settings.phone.replace(/[^\d+]/g, '') : ''
                     </button>
                   </li>
                 ) : (
-                  <li class="card card--text" style={`--i:${i}`} data-project={it.project ?? ''}>
+                  <li class={`card card--text${it.newRow ? ' card--row' : ''}`} style={`--i:${i}`} data-project={it.project ?? ''}>
                     {it.title && <h3>{it.title}</h3>}
                     {it.description && <p>{it.description}</p>}
                   </li>

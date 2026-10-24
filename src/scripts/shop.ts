@@ -2,23 +2,8 @@
 // - hover: photo greys out, project description appears on it (CSS)
 // - click in the overview: the grid swaps to the photos of that project, with a Back button
 // - click inside a project: the viewer opens with arrows through that project (lightbox.ts)
-// - sidebar list filters by project too; S/M/L sets the image size (remembered per browser)
-const VIEW_KEY = 'kaja-view';
-
+// - sidebar list filters by project too
 export function initShop() {
-  let saved = '';
-  try { saved = localStorage.getItem(VIEW_KEY) || ''; } catch {}
-
-  const grids = Array.from(document.querySelectorAll<HTMLElement>('[data-grid]'));
-  const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('.view__btn'));
-  function setView(v: string) {
-    grids.forEach((g) => (g.dataset.view = v));
-    viewBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === v)));
-    try { localStorage.setItem(VIEW_KEY, v); } catch {}
-  }
-  if (['S', 'M', 'L'].includes(saved)) setView(saved);
-  viewBtns.forEach((b) => b.addEventListener('click', () => setView(b.dataset.view!)));
-
   document.querySelectorAll<HTMLElement>('.shop').forEach((panel) => {
     const sideBtns = Array.from(panel.querySelectorAll<HTMLButtonElement>('.side__item'));
     const cards = Array.from(panel.querySelectorAll<HTMLElement>('.card'));

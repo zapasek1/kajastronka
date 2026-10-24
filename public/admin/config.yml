@@ -77,9 +77,9 @@ collections:
                 label_singular: tile
                 widget: list
                 summary: '{{fields.title}}'
-                hint: 'Order = order on the page. Photos with the same Project are grouped: clicking a photo shows the whole project. A tile without a photo becomes a text tile (best placed as the project description).'
+                hint: 'Order = order on the page. Photos with the same Project are grouped and each project starts on a new row. A tile without a photo becomes a text tile (takes 2 places).'
                 fields:
-                  - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false, hint: 'Any size: it is shrunk to max 2000 px automatically. Best in portrait 4:5; the grid crops from the edges.' }
+                  - { name: image, label: Photo (leave empty for a text tile), widget: image, required: false, hint: 'Portrait 4:5 (e.g. 1600 × 2000) = 1 place in the row. Landscape 5:3 (e.g. 3340 × 2000) = 2 places, full width on a phone. A row has 4 places on desktop. Any size is shrunk to max 2000 px automatically.' }
                   - { name: title, label: Title, widget: string, required: false }
                   - { name: description, label: Description, widget: text, required: false }
                   - { name: project, label: Project, widget: string, required: false, hint: 'Exactly the same name on every photo of one project, e.g. Sense Collection.' }
