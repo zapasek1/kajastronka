@@ -108,9 +108,9 @@ html:not(.js) .panel + .panel { margin-top: 80px; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
 
 /* Start page */
-.hero { padding: clamp(56px, 12vh, 130px) 0 clamp(36px, 7vh, 72px); }
+.hero { padding: clamp(44px, 9vh, 96px) 0 clamp(36px, 7vh, 72px); }
 .hero__name {
-  font-size: clamp(2.6rem, 7.5vw, 6.2rem);
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
   line-height: 0.95;
   letter-spacing: 0.04em;
   text-transform: uppercase;
