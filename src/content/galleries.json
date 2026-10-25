@@ -25,7 +25,7 @@
     {
       "id": "fashion",
       "label": "fashion",
-      "intro": "Collections",
+      "intro": "Collections, designed from concept to construction.",
       "offer": "",
       "items": [
         {
@@ -117,7 +117,7 @@
     {
       "id": "photography",
       "label": "photography",
-      "intro": "Fashion and portrait photography",
+      "intro": "Fashion, product and campaign photography.",
       "offer": "Sessions on request",
       "items": [
         {
@@ -173,38 +173,56 @@
     {
       "id": "graphics",
       "label": "graphics",
-      "intro": "Identity, print and editorial",
+      "intro": "Visual identity, concept development, packaging and layout design for print and digital.",
       "offer": "",
       "items": [
         {
-          "image": "/uploads/ph-10.webp",
-          "title": "Cirra Studio identity",
-          "description": "Logo, type and colour for the brand concept.",
-          "project": "Brand identity"
+          "image": "/uploads/kajamann_graphics_mix_01.webp",
+          "title": "Senelle Cosmetics",
+          "description": "Rebranding and packaging design for a cosmetics company, Senelle.",
+          "project": "Studio Project"
         },
         {
-          "image": "/uploads/ph-11.webp",
-          "title": "Lookbook layout",
-          "description": "Editorial layout for a collection lookbook.",
-          "project": "Editorial"
+          "image": "/uploads/kajamann_graphics_mix_02.webp",
+          "title": "Senelle Cosmetics",
+          "description": "Packaging design for the SPF cream. Photo courtesy of Senelle Cosmetics.",
+          "project": "Studio Project"
         },
         {
-          "image": "",
-          "title": "Graphics",
-          "description": "Branding, lookbooks, posters and social media visuals, designed to sit quietly next to the product.",
-          "project": "Brand identity"
+          "image": "/uploads/kajamann_graphics_mix_03.webp",
+          "title": "Natsnack",
+          "description": "Packaging design for Natsnack’s range of nut butters.",
+          "project": "Studio Project"
         },
         {
-          "image": "/uploads/ph-12.webp",
-          "title": "Poster",
-          "description": "Print design for an event.",
-          "project": "Print"
+          "image": "/uploads/kajamann_graphics_mix_04.webp",
+          "title": "Kimoco",
+          "description": "Contributed to the packaging design as part of the design team. Photo courtesy of Kimoco.",
+          "project": "Studio Project"
         },
         {
-          "image": "/uploads/ph-13.webp",
-          "title": "Labels",
-          "description": "Care labels and hang tags.",
-          "project": "Print"
+          "image": "/uploads/kajamann_graphics_mix_05.webp",
+          "title": "DPD",
+          "description": "Graphic design for above-the-line and below-the-line advertising.",
+          "project": "Studio Project"
+        },
+        {
+          "image": "/uploads/kajamann_graphics_mix_06.webp",
+          "title": "DPD",
+          "description": "Newsletter design for DPD’s corporate communications.",
+          "project": "Studio Project"
+        },
+        {
+          "image": "/uploads/kajamann_graphics_mix_07.webp",
+          "title": "4Organic Cosmetics",
+          "description": "Packaging design concept for a new line of cosmetics.",
+          "project": "Studio Project"
+        },
+        {
+          "image": "/uploads/kajamann_graphics_mix_08.webp",
+          "title": "Neboa",
+          "description": "Contributed to the packaging as part of the design team, creating pictograms and handling desktop publishing. Photo courtesy of Neboa.",
+          "project": "Studio Project"
         }
       ]
     }
