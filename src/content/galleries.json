@@ -77,6 +77,18 @@
           "project": "Sense Collection"
         },
         {
+          "image": "/uploads/kajamann_fashion_03_01.webp",
+          "title": "Sense Film",
+          "description": "The collection was presented in a short film that premiered at the Łódź Fashion Film Festival.",
+          "project": "Sense Collection"
+        },
+        {
+          "image": "/uploads/kajamann_fashion_03_02.webp",
+          "title": "Sense Film",
+          "description": "This film came to life through a collaboration with videographer Anna Ryń and art director and stylist Martyna Malepszy.",
+          "project": "Sense Collection"
+        },
+        {
           "image": "/uploads/kajamann_fashion_04_01.webp",
           "title": "Resort '25",
           "description": "A concept shaped by personal reflections on early memories.",
@@ -109,40 +121,52 @@
       "offer": "Sessions on request",
       "items": [
         {
-          "image": "/uploads/ph-14.webp",
-          "title": "Remains",
-          "description": "Fashion photography for Remains.",
-          "project": "Fashion Photography for Remains"
+          "image": "/uploads/kajamann_photography_01_01.webp",
+          "title": "YLSC™",
+          "description": "Fashion photography for YLSC™, featuring the Quentin Bag.",
+          "project": "Fashion Photography for YLSC™"
         },
         {
-          "image": "/uploads/ph-15.webp",
-          "title": "Remains",
-          "description": "Studio shoot, natural light.",
-          "project": "Fashion Photography for Remains"
+          "image": "/uploads/kajamann_photography_01_02.webp",
+          "title": "YLSC™",
+          "description": "Detail: a stainless steel carabiner engraved with the YLCS logo, integrated into the bag’s design.",
+          "project": "Fashion Photography for YLSC™"
         },
         {
-          "image": "/uploads/ph-16.webp",
-          "title": "YLSC",
-          "description": "Fashion photography for YLSC.",
+          "image": "/uploads/kajamann_photography_01_03.webp",
+          "title": "YLSC™",
+          "description": "\"Thank God she wants YLSC™ and not revange\" - YLSC™",
           "project": "Fashion Photography for YLSC"
         },
         {
-          "image": "/uploads/ph-17.webp",
-          "title": "YLSC",
-          "description": "Campaign images.",
-          "project": "Fashion Photography for YLSC"
+          "image": "/uploads/kajamann_photography_01_04.webp",
+          "title": "YLSC™",
+          "description": "Reimagining the packshot.",
+          "project": "Fashion Photography for YLSC™"
         },
         {
-          "image": "",
-          "title": "Photography",
-          "description": "Portraits, products and collections, shot in calm, natural light.",
-          "project": "Portraits"
+          "image": "/uploads/kajamann_photography_02_01.webp",
+          "title": "Remains Official",
+          "description": "Frayed edges, the brand’s signature detail: a hand-distressed finish.",
+          "project": "Fashion Photography for Remains Official"
         },
         {
-          "image": "/uploads/ph-18.webp",
-          "title": "Portrait",
-          "description": "Portrait session.",
-          "project": "Portraits"
+          "image": "/uploads/kajamann_photography_02_02.webp",
+          "title": "Remains Official",
+          "description": "The signature logo tee, paired with a stainless steel logo necklace.",
+          "project": "Fashion Photography for Remains Official"
+        },
+        {
+          "image": "/uploads/kajamann_photography_02_03.webp",
+          "title": "Remains Official",
+          "description": "A wider look at the silhouette.",
+          "project": "Fashion Photography for Remains Official"
+        },
+        {
+          "image": "/uploads/kajamann_photography_02_04.webp",
+          "title": "Remains Official",
+          "description": "The logo keychain, a finishing touch that reinforces the brand’s identity.",
+          "project": "Fashion Photography for Remains Official"
         }
       ]
     },
