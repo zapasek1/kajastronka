@@ -1,16 +1,14 @@
 {
   "heading": "Contact",
-  "text": "For collaborations, custom pieces, graphic projects or photo sessions, write to me. I usually reply within two days.",
+  "text": "If you’d like to work together, I’d love to hear from you. Leave me a message and I’ll get back to you as soon as I can.",
   "services": [
-    "Fashion design and brand concepts",
-    "Graphic design",
-    "Fashion and portrait photography"
+    "Fashion Design",
+    "Graphic Design",
+    "Fashion and Product Photography"
   ],
+  "experience": [],
   "location": "",
   "form_intro": "",
   "consent": "I agree that my name and email are used only to reply to this message.",
-  "thanks": "Thank you, your message has been sent. I will reply soon.",
-  "experience": [
-    "Fashion Design Assistant at Zekaryas Solomon Ltd."
-  ]
+  "thanks": "Message received, thank you! I’ll be in touch soon."
 }
