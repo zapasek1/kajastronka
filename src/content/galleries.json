@@ -229,15 +229,15 @@
           "project": "Product Photography for Natsnack"
         },
         {
-          "image": "/uploads/kajamann_photography_05_03.webp",
-          "title": "Natsnack",
-          "description": "A different angle and framing bring out the props, the depth of field, and the quiet, lived-in mood of the setting.",
-          "project": "Product Photography for Natsnack"
-        },
-        {
           "image": "/uploads/kajamann_photography_05_04.webp",
           "title": "Natsnack",
           "description": "A styled breakfast table in natural light. The jar, panettone, and coffee are arranged to create layers of warm brown, cream, and gold.",
+          "project": "Product Photography for Natsnack"
+        },
+        {
+          "image": "/uploads/kajamann_photography_05_03.webp",
+          "title": "Natsnack",
+          "description": "A different angle and framing bring out the props, the depth of field, and the quiet, lived-in mood of the setting.",
           "project": "Product Photography for Natsnack"
         }
       ]
